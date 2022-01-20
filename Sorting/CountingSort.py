@@ -30,4 +30,22 @@ def countingSort(arr):
     return result
 
 
-print(countingSort([1, 0, 3, 2, 1]))
+def countingSort2(arr):
+    max_value = max(arr)
+    min_value = min(arr)
+
+    range = max_value - min_value
+    counts = [0] * (range+1)
+
+    for ar in arr:
+        counts[ar-min_value] += 1
+
+    result = []
+    for i, value in enumerate(counts):
+        if value != 0:
+            result += [i]*value
+
+    return result
+
+
+print(countingSort2([100,2, 0, 3, 2, 2, 1]))
