@@ -11,6 +11,7 @@ class Solution:
                     else:
                         nums[j], nums[j-1] = nums[j-1], nums[j]
 
+
     def sortColors2(self, nums):
 
         counts = [0] * 3
