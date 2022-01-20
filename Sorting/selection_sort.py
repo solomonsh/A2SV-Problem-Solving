@@ -1,6 +1,3 @@
-from select import select
-
-
 
 # Selection sort 
 # Time Complexity N^2
