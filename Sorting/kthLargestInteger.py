@@ -1,4 +1,4 @@
-from ctypes import pointer
+
 import heapq
 class Solution:
 
