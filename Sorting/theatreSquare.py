@@ -8,4 +8,4 @@ def theatreSquare(m,n,a):
  
 
 
-print(theatreSquare(6,9,2))  
+print(theatreSquare(2,1,1))  
