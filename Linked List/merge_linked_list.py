@@ -6,43 +6,32 @@ class ListNode:
 
 
 class Solution:
+    def printLinkedList(self, head):
+        current = head
+
+        while current:
+            print(current.val)
+            current = current.next
 
     def mergeTwoLists(self, list1, list2):
 
-        current1, current2 = list1, list2
+        result = current3 = ListNode()
 
-        if current1 is None:
-            return current2
-        if current2 is None:
-            return current1
+        while list1 and list2:
 
-        if current1.val < current2.val:
-            merged_list = ListNode(current1.val)
-            current1 = current1.next
-        else:
-            merged_list = ListNode(current2.val)
-            current2 = current2.next
-
-        merged_list_counter = merged_list
-
-        while current1 and current2:
-
-            if current1.val <= current2.val:
-                merged_list_counter.next = ListNode(current1.val)
-                current1 = current1.next
-                merged_list_counter = merged_list_counter.next
+            if list1.val <= list2.val:
+                current3.next = list1
+                list1 = list1.next
 
             else:
-                merged_list_counter.next = ListNode(current2.val)
-                current2 = current2.next
-                merged_list_counter = merged_list_counter.next
+                current3.next = list2
+                list2 = list2.next
 
-        if current1:
-            merged_list_counter.next = current1
-        if current2:
-            merged_list_counter.next = current2
+            current3 = current3.next
 
-        return merged_list
+        current3.next = list1 or list2
+
+        return result.next
 
 
 sol = Solution()
@@ -55,4 +44,4 @@ list2 = ListNode(1)
 list2.next = ListNode(3)
 list2.next.next = ListNode(4)
 
-sol.mergeTwoLists(list1, list2)
+sol.printLinkedList(sol.mergeTwoLists(list1, list2))
