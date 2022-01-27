@@ -6,12 +6,17 @@ class ListNode:
 
 
 class Solution:
+
+    # Approach 1
+    # Time complexity n
+    # Space complexity n
+
     def detectCycle(self, head):
         nexts = set()
 
         current = head
 
-        count = 0
+ 
         while current:
             if current.next not in nexts:
                 nexts.add(current)
@@ -21,3 +26,27 @@ class Solution:
             current = current.next
 
         return None
+
+
+
+    # Approach 2
+    # Time complexity n
+    # Space complexity 1
+    
+    def detectCycle(self, head):
+
+        fast = head
+        slow = head
+    
+        while fast and fast.next:
+             
+            fast = fast.next.next
+            slow = slow.next
+            
+            if fast == slow:
+                slow = head
+                while slow != fast:
+                    slow = slow.next
+                    fast = fast.next
+                return slow
+         
