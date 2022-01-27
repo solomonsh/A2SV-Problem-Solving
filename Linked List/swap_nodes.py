@@ -44,8 +44,7 @@ class Solution:
      
 
             
-       
-
+    
 
 
 sol = Solution()
@@ -54,9 +53,6 @@ list2 = ListNode(1)
 list2.next = ListNode(2)
 list2.next.next = ListNode(3)
 list2.next.next.next = ListNode(4)
-# list2.next.next.next.next = ListNode(5)
-# list2.next.next.next.next.next = ListNode(6)
-# list2.next.next.next.next.next.next = ListNode(7)
-# list2.next.next.next.next.next.next.next = ListNode(8)
+ 
 
 sol.swapPairs(list2)
