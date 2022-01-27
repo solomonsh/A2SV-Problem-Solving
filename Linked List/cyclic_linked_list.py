@@ -5,7 +5,7 @@ class ListNode:
         self.next = None
 
 class Solution:
-    def hasCycle(self, head: Optional[ListNode]) -> bool:
+    def hasCycle(self, head):
      
             
         fast = head
@@ -19,3 +19,14 @@ class Solution:
                 return True
             
         return False
+
+
+
+list2 = ListNode(1)
+list2.next = ListNode(3)
+list2.next.next = ListNode(4)
+
+
+sol = Solution()
+
+# sol.hasCycle(list2)
