@@ -3,81 +3,65 @@ class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
+
 class Solution:
- 
-    def get_last_nodes(self,head):
-        
-        if head.next:
-            iter = head.next
-            slow = head
 
-            while iter.next:
-                    iter = iter.next
-                    slow = slow.next
+    def reverse_linkedList(self, head):
 
-            return slow
-        else:
-            return head
-
-    def get_without_last(self,head):
-        
-        if head.next:
-            iter = head.next
-            slow = head
-
-            while iter.next:
-                    iter = iter.next
-                    slow = slow.next
-
-            slow.next = None
-            return head
-        else:
-            return head
-
-
-    def reorderList(self, head):
-        
-        if not head.next:
-            return head
-        
-        if not head.next.next:
-            return head
-        first_node = head 
-        first_node_next = head.next
-
-        last_node_prev = self.get_last_nodes(head)
-        last_node = last_node_prev.next
-
- 
+        previous = None
         current = head
+
         while current:
 
-            first_node.next = last_node
-            without_last = self.get_without_last(first_node_next)
- 
-            last_node.next = without_last
+            next = current.next
+            current.next = previous
 
-            first_node = without_last
-            first_node_next = first_node.next
+            previous = current
 
-            last_node_prev = self.get_last_nodes(first_node)
-            last_node = last_node_prev.next
+            current = next
 
-            if first_node == last_node_prev:
-                return 
-            
-            current = current.next
- 
+        return previous
 
-        
+    def reorderList(self, head):
+
+        slow = fast = head
+        prev_slow = None
+
+        while fast and fast.next:
+            prev_slow = slow
+            slow = slow.next
+            fast = fast.next.next
+
+        middle = slow
+
+        previous = break_point = self.reverse_linkedList(middle)
+        prev_slow.next = previous
+
+        dummy = dummy_curr = ListNode()
+        current1 = head
+
+        while break_point != current1:
+
+            current1_next = current1.next
+            dummy_curr.next = current1
+            dummy_curr.next.next = previous
+
+            dummy_curr = dummy_curr.next.next
+            previous = previous.next
+            current1 = current1_next
+
+        return dummy.next
+
+
 list1 = ListNode(1)
 list1.next = ListNode(2)
 list1.next.next = ListNode(3)
 list1.next.next.next = ListNode(4)
 list1.next.next.next.next = ListNode(5)
- 
 
 
 sol = Solution()
 
-sol.reorderList(list1)
+
+# print_linked_list(sol.reverse_linkedList(list1))
