@@ -44,12 +44,6 @@ class Solution:
             return self.mergeKLists(lists_)
 
 
-def print_linked_list(head):
-    current = head
-
-    while current:
-        print(current.val)
-        current = current.next
 
 
 list1 = ListNode(1)
@@ -68,4 +62,5 @@ lists = [list1, list2, list3]
 
 sol = Solution()
 
-print_linked_list(sol.mergeKLists(lists))
+sol.mergeKLists(lists)
+ 
