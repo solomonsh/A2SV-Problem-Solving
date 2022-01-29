@@ -3,8 +3,6 @@ class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
-
-
 class Solution:
     def removeElements(self, head, val):
 
@@ -16,27 +14,22 @@ class Solution:
             if current.val == val:
                 if not previous:
                     head = head.next
-                    previous = None
                     current = current.next
-                    continue
+    
                 else:
                     while current and current.val == val:
                         current = current.next
 
                     previous.next = current
-                    previous = current
-                    if current:
-                        current = current.next
-                    continue
+                    previous =  current
+                    current = current.next if current else None
 
             else:
                 current = current.next
-                if not previous:
-                    previous = head
-                else:
-                    previous = previous.next
-
+                previous = head if not previous else previous.next
+               
         return head
+
 
 
 list1 = ListNode(1)
