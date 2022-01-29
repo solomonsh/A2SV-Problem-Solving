@@ -32,6 +32,22 @@ class Solution:
 
 
 
+    # Optimized version
+    def removeElementsOptimized(self, head, val):
+        dummy_head = ListNode(-1)
+        dummy_head.next = head
+        
+        current_node = dummy_head
+        while current_node.next != None:
+            if current_node.next.val == val:
+                current_node.next = current_node.next.next
+            else:
+                current_node = current_node.next
+                
+        return dummy_head.next
+
+
+
 list1 = ListNode(1)
 list1.next = ListNode(2)
 list1.next.next = ListNode(2)
@@ -45,4 +61,4 @@ list1.next.next.next.next.next = ListNode(2)
 
 sol = Solution()
 
-print_linked_list(sol.removeElements(list1, 2))
+sol.removeElements(list1, 2)
