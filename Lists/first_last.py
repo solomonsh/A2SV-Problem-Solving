@@ -26,6 +26,6 @@ class Solution:
 
 sol = Solution()
 
-print(sol.searchRange([7,7,7,7,7],7))
+print(sol.searchRange([8,8,8,8,8],7))
 
 # print(sol.searchRange([1],0))
