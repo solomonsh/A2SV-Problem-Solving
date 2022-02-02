@@ -1,5 +1,3 @@
-from unittest import result
-
 
 class Solution:
     def nextGreaterElement(self, nums1, nums2):
