@@ -18,6 +18,13 @@ class CustomStack:
             return self.stack.pop()
 
     def increment(self, k: int, val: int) -> None:
+        # Apporach 1
+        # if k > len(self.stack): self.stack = [stack_val+val for stack_val in self.stack ]
+        # else:
+        #     for i in range(k):
+        #         self.stack[i] += val
+
+        # Approach 2
         new_stack = []
         if k > self.size:
             while self.stack:
