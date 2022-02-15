@@ -1,11 +1,14 @@
 class Solution:
     def minStartValue(self, nums):
 
-        min_value = 0
-        preSum = 0
+        prefixSum = [0]*len(nums)
 
-        for num in nums:
-            preSum += num
-            min_value = min(min_value, preSum)
+        prefixSum[0] = nums[0]
 
-        return 1 - min_value
+        for i in range(1, len(nums)):
+
+            prefixSum[i] = prefixSum[i-1] + nums[i]
+
+        minVal = min(prefixSum)
+
+        return 1-minVal if minVal < 0 else 1
