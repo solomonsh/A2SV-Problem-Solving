@@ -30,7 +30,7 @@ sol = Solution()
 
 
 # print(sol.minSubArrayLen(5,[1,4,4]))
-print(sol.minSubArrayLen(11,[1,1,1,1,1,1,1,1]))
+# print(sol.minSubArrayLen(11,[1,1,1,1,1,1,1,1]))
 
 
-# print(sol.minSubArrayLen(11,[1,2,3,4,5]))
+print(sol.minSubArrayLen(11,[1,2,3,4,5]))
