@@ -1,5 +1,3 @@
-
-
 class Solution:
     def minSubArrayLen(self, target, nums):
         nums.append(0)
@@ -26,11 +24,7 @@ class Solution:
 
 
 sol = Solution()
-# print(sol.minSubArrayLen(7, [2, 3, 1, 2, 4, 3]))
+print(sol.minSubArrayLen(7, [2, 3, 1, 2, 4, 3]))
 
 
-# print(sol.minSubArrayLen(5,[1,4,4]))
-# print(sol.minSubArrayLen(11,[1,1,1,1,1,1,1,1]))
-
-
-print(sol.minSubArrayLen(11,[1,2,3,4,5]))
+ 
