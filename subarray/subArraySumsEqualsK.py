@@ -15,7 +15,6 @@ def subarraySum(nums, k):
             sums_val[cur_sum] = 1
         else:
             sums_val[cur_sum] += 1
-
     return count
 
 
