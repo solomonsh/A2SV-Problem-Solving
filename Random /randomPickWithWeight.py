@@ -10,5 +10,11 @@ class Solution:
     def pickIndex(self) -> int:
 
         result = random.choices(population=self.indeces,
-                                k=1, weights=self.w)[0]
+                                k=2, weights=self.w)
+        print(result)
         return result
+
+
+
+obj = Solution([1,3])
+param_1 = obj.pickIndex()
