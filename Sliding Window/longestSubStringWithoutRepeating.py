@@ -1,5 +1,6 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
+
         if len(s) == 0:
             return 0
         words_in_window = {s[0]: 1}
@@ -21,8 +22,7 @@ class Solution:
                 count += 1
                 right += 1
 
-            if count > max_count:
-                max_count += 1
+            max_count = max(max_count,count)
 
         return max_count
 
