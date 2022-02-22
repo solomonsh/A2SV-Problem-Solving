@@ -11,3 +11,8 @@ class Solution:
                       
                        
         return runningSum
+
+
+
+sol = Solution()
+print(sol.runningSum([0,0,0,1,0,0,1,0,0,0]))

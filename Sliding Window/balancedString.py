@@ -13,6 +13,7 @@ class Solution:
 
         have, need = 0, len(countT)
         res, resLen = [-1, -1], float("infinity")
+        
         l = 0
         for r in range(len(s)):
             c = s[r]
