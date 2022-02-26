@@ -23,4 +23,4 @@ def getMinimumCost(parcels,k):
 # print(getMinimumCost([6,5,4,1,3],2))
 
 
-print(getMinimumCost([1],1000000))
+# print(getMinimumCost([1],1000000))
