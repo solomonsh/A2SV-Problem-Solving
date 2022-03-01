@@ -26,7 +26,7 @@ class MyHashMap:
     def put(self, key: int, value: int) -> None:
 
         array_index = self.compressor(self.hash(key))
-        current_array_value = self.array[array_index]
+       
 
         newNode = ListNode(key, value)
 
@@ -80,6 +80,7 @@ class MyHashMap:
                 else:
                     previous = previous.next
                     current = current.next
+
 
 
 # Your MyHashMap object will be instantiated and called as such:
