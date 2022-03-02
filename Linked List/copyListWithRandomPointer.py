@@ -1,5 +1,8 @@
 
 # Definition for a Node.
+from sqlalchemy import true
+
+
 class Node:
     def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
         self.val = int(x)
@@ -10,58 +13,34 @@ class Node:
 class Solution:
     def copyRandomList(self, head):
 
-        copyList = Node(0)
-        copyCurrent = copyList
+        lists_dict = {}
 
-        currentOld = head
+        current = head
+        while current:
+            lists_dict[current] = Node(current.val)
+            current = current.next
 
-        randomPointer = {}
-        values = {}
+        newHead = Node(0)
+        added = False
+        for old, new in lists_dict.items():
+            if not added:
+                newHead.next = new
+                added = true
 
-        count = 0
-        while currentOld:
+            if old.next is None:
+                new.next = None
+            if old.random is None:
+                new.random = None
 
-            values[currentOld] = count
-            currentOld = currentOld.next
-            count += 1
+            if old.next is not None:
+                new.next = lists_dict[old.next]
+            if old.random is not None:
+                new.random = lists_dict[old.random]
 
-        currentOld = head
+        newHead = newHead.next
+        return newHead
 
-        while currentOld:
-
-            if currentOld.random is not None:
-                randomPointer[currentOld] = values[currentOld.random]
-
-            else:
-                randomPointer[currentOld] = None
-
-            copyCurrent.next = Node(currentOld.val)
-
-            currentOld = currentOld.next
-            copyCurrent = copyCurrent.next
-
-        copyList = copyList.next
-        copyCurrent = copyList
-        currentOld = head
-
-        while currentOld:
-
-            if currentOld.random is None:
-                copyCurrent.random = None
-            else:
-                count = 0
-                temp_current = copyList
-                while count < randomPointer[currentOld]:
-                    temp_current = temp_current.next
-                    count += 1
-
-                copyCurrent.random = temp_current
-
-            copyCurrent = copyCurrent.next
-            currentOld = currentOld.next
-
-        return copyList
-
+ 
 
 head = Node(7)
 head.next = Node(13)
