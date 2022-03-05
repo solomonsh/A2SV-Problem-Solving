@@ -11,6 +11,7 @@
 
 class Solution:
               
+    # time complexity O(XlogY)
     def findSolution(self, customfunction: 'CustomFunction', z: int) -> List[List[int]]:
         def binarySearch(y,target):
             left = 1
