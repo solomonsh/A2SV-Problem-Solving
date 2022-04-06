@@ -42,5 +42,4 @@ class Solution:
 
 sol = Solution()
 
-print(sol.topKFrequent(["aaa","aa","a"],2))
-        
+ 
