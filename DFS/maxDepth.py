@@ -22,6 +22,18 @@ class Solution:
 
         dfs(root)
         return self.maxDep
+
+     
+    # second solution
+    def maxDepth(self, root: 'Node') -> int:
+        if(root is None):
+            return 0
+        depth = 0
+        for  child in root.children:
+            depth = max(self.maxDepth(child),depth)
+        return depth+1
+    
+        
     
         
 
