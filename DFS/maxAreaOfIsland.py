@@ -21,8 +21,6 @@ class Solution:
                     self.lands.remove((new_row,new_col))
                     dfs(grid,(new_row,new_col))
 
-         
-        
         areas = []
         
         for land in self.lands:
@@ -32,3 +30,22 @@ class Solution:
      
         return max(areas)
  
+
+ # better solution
+class Solution1:
+    def maxAreaOfIsland(self, grid):
+        
+        seen = set()
+        def area(r,c):
+            if 0<=r<len(grid) and 0<=c<len(grid[0]) and grid[r][c] == 1 and (r,c) not in seen:
+                seen.add((r,c))
+                return (1 + area(r+1, c) + area(r-1, c) + area(r, c-1) + area(r, c+1))
+            else:
+                return 0
+            
+        areas = []
+        for r in range(len(grid)):
+            for c in range(len(grid[0])):
+                areas.append(area(r,c))
+        
+        return max(areas)
