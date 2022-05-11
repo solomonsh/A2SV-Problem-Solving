@@ -7,6 +7,7 @@ class Solution:
             if (i,j) == (len(grid)-1,len(grid[0])-1):
                 
                 return grid[i][j]
+            
             if i>=len(grid) or j>= len(grid[0]):
                 return float('inf')
             
